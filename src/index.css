@@ -1,0 +1,88 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900 font-inter;
+  }
+}
+
+/* Toast customizations */
+.Toastify__toast {
+  @apply rounded-xl shadow-xl border;
+}
+
+.Toastify__toast--success {
+  @apply bg-white border-green-200;
+}
+
+.Toastify__toast--error {
+  @apply bg-white border-red-200;
+}
+
+.Toastify__toast--info {
+  @apply bg-white border-blue-200;
+}
+
+.Toastify__close-button {
+  @apply text-gray-400;
+}
+
+.Toastify__progress-bar {
+  @apply bg-gradient-to-r from-indigo-500 to-violet-500;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* File drop animations */
+@keyframes dropZoneActive {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1.01); }
+}
+
+.drop-zone-active {
+  animation: dropZoneActive 0.3s ease-out;
+}
+
+/* Progress bar gradient animation */
+.progress-gradient {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  background-size: 200% 100%;
+  animation: gradient 2s ease infinite;
+}
+
+/* Upload success pulse */
+@keyframes successPulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-pulse {
+  animation: successPulse 0.6s ease-out;
+}
